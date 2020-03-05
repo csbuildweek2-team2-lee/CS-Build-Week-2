@@ -158,7 +158,7 @@ class Player:
     def status(self):
         endpoint = "/adv/status/"
         res = requests.post(self.base_url + endpoint, headers=headers)
-        # print(f'------- {res.text} STATUS')
+        print(f'------- {res.text} STATUS')
 
         self.p_status = json.loads(res.text)  # Parse player data
         self.cd = self.p_status['cooldown']  # Get cooldown
