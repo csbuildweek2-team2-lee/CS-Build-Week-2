@@ -4,7 +4,7 @@ import random
 import time
 import requests
 
-player = Player('Name', 0)
+player = Player('NoName', 0)
 player.init()
 time.sleep(player.cd)
 graph = dict()
