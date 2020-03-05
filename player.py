@@ -107,10 +107,9 @@ class Player:
         res = requests.post(self.base_url + endpoint,
                             headers=headers,
                             data=json.dumps(data))
-        # next_room = json.loads(res.text)
-        # self.current_room = next_room
-        # print(f'{next_room} Here is our new room.')
-
+        next_room = json.loads(res.text)
+        self.current_room = next_room
+        print(f'{next_room} Here is our new room.')
         self.room = json.loads(res.text)  # Parse room data
         self.cd = self.room['cooldown']  # Get cooldown
 
