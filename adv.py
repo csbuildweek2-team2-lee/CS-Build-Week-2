@@ -33,7 +33,7 @@ def bfs(room):
         traversal_path.append(move)
         reverse_path.pop(-1)
         if '?' in graph[player.room['room_id']].values():
-            # print(f'Graph at end of BFS. {graph}')
+            print(f'Graph at end of BFS. {graph}')
             return
 
 def dfs(room, cardinal_directions):
@@ -83,7 +83,7 @@ def name_change(self):
 rm_txt = open('rooms.txt', 'w+')
 
 while len(graph) < 500:
-    # print(graph)
+    print(graph)
     print(player.room['room_id'])
     print(player.room['title'])
     rm_json = json.dumps(player.room)
