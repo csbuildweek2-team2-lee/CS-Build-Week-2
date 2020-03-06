@@ -88,7 +88,7 @@ while len(graph) < 500:
     print(player.room['title'])
     rm_json = json.dumps(player.room)
     rm_txt.write(rm_json)
-    take_treasure(player.room)
+    #(player.room)
     sell_treasure(player.room)
     name_change(player.room)
     in_room = player.room
