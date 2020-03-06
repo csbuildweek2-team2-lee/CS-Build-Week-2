@@ -56,7 +56,7 @@ def dfs(room, cardinal_directions):
 
 
 def take_treasure(self):
-    if len(player.room['items']) > 0:
+    if len(player.room['items']) > 10:
         player.status()
         time.sleep(player.cd)
         if len(player.p_status['inventory']) < player.p_status['strength']:
