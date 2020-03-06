@@ -3,6 +3,7 @@ import json
 import random
 import time
 import requests
+import utils
 
 player = Player('NoName', 0)
 player.init()
@@ -22,7 +23,7 @@ def populate_graph_with_exits(room):
 
 def get_opposite(cardinal_direction):
     ''' Returns the opposite cardinal direction '''
-    opposite = {'n': 'e', 's': 'w', 'n': 'e', 's': 'w'}
+    opposite = {'n': 's', 's': 'n', 'e': 'w', 'w': 'e'}
     return opposite.get(cardinal_direction)
 
 def bfs(room):
@@ -56,7 +57,7 @@ def dfs(room, cardinal_directions):
 
 
 def take_treasure(self):
-    if len(player.room['items']) > 10:
+    if len(player.room['items']) > 0:
         player.status()
         time.sleep(player.cd)
         if len(player.p_status['inventory']) < player.p_status['strength']:
