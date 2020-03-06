@@ -35,22 +35,22 @@ class Player:
 
 #Treasure Hunting
 
-    # def take(self):
-    #     endpoint = "/adv/take/"
-    #     data = {"name": "treasure"}
-    #     res = requests.post(self.base_url + endpoint,
-    #                         headers=headers,
-    #                         data=json.dumps(data))
-    #     print(f'------- {res.text} TAKING TREASURE')
+    def take(self):
+        endpoint = "/adv/take/"
+        data = {"name": "treasure"}
+        res = requests.post(self.base_url + endpoint,
+                            headers=headers,
+                            data=json.dumps(data))
+        print(f'------- {res.text} TAKING TREASURE')
 
-    #     self.room = json.loads(res.text)  # Parse room data
-    #     self.cd = self.room['cooldown']  # Get cooldown
+        self.room = json.loads(res.text)  # Parse room data
+        self.cd = self.room['cooldown']  # Get cooldown
 
-    #     if self.room['errors']:
-    #         print(self.room['errors'])
-    #     else:
-    #         print(self.room['messages'])
-
+        if self.room['errors']:
+            print(self.room['errors'])
+        else:
+            print(self.room['messages'])
+            
     def drop(self):
         endpoint = "/adv/drop/"
         data = {"name": "treasure"}
@@ -107,9 +107,9 @@ class Player:
         res = requests.post(self.base_url + endpoint,
                             headers=headers,
                             data=json.dumps(data))
-        #next_room = json.loads(res.text)
-        #self.current_room = next_room
-        #print(f'{next_room} Here is our new room.')
+        next_room = json.loads(res.text)
+        self.current_room = next_room
+        print(f'{next_room} Here is our new room.')
         self.room = json.loads(res.text)  # Parse room data
         self.cd = self.room['cooldown']  # Get cooldown
 
