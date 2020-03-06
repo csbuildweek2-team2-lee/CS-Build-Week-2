@@ -60,7 +60,7 @@ def take_treasure(self):
         player.status()
         time.sleep(player.cd)
         if len(player.p_status['inventory']) < player.p_status['strength']:
-            #player.take()
+            player.take()
             time.sleep(player.cd)
         else:
             print('Inventory is full')
