@@ -3,7 +3,6 @@ import json
 import random
 import time
 import requests
-import utils
 
 player = Player('NoName', 0)
 player.init()
@@ -65,6 +64,12 @@ def take_treasure(self):
             time.sleep(player.cd)
         else:
             print('Inventory is full')
+
+def pray_shrine(self): 
+   if player.room['title'] == "Linh's Shrine":
+        player.status()
+        player.pray()
+        time.sleep(player.cd)
 
 def sell_treasure(self):
     if player.room['title'] == "Shop":

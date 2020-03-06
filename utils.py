@@ -89,3 +89,5 @@ def record_room_info(player_graph, response, direction=None, previous_room=None)
     if player_graph[room_id]["exits"][opposite_map[direction]] == "?":
         player_graph[room_id]["exits"][opposite_map[direction]
                                        ] = previous_room
+    
+    return room_id 

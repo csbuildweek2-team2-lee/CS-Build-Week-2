@@ -3,7 +3,6 @@ import hashlib
 import json
 import time
 from decouple import config
-import utils
 
 api_key = 'Token 340f0eab302a5dfcd3a41113296527f9db0f3c75'
 
@@ -100,6 +99,22 @@ class Player:
         else:
             print(self.room['messages'])
 
+    def pray(self):
+        endpoint = "/adv/pray/"
+        data = {"name": "treasure"}
+        res = requests.post(self.base_url + endpoint,
+                            headers=headers,
+                            data=json.dumps(data))
+        print(f'------- {res.text} Pray')
+
+        self.room = json.loads(res.text)  # Parse room data
+        self.cd = self.room['cooldown']  # Get cooldown
+
+        if self.room['errors']:
+            print(self.room['errors'])
+        else:
+            print(self.room['messages'])
+
 # Walk About 
 
     def move(self, direction):
@@ -108,9 +123,9 @@ class Player:
         res = requests.post(self.base_url + endpoint,
                             headers=headers,
                             data=json.dumps(data))
-        #next_room = json.loads(res.text)
-        #self.current_room = next_room
-        #print(f'{next_room} Here is our new room.')
+        next_room = json.loads(res.text)
+        self.current_room = next_room
+        print(f'{next_room} Here is our new room.')
         
         self.room = json.loads(res.text)  # Parse room data
         self.cd = self.room['cooldown']  # Get cooldown
