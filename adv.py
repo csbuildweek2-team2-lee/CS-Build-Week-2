@@ -33,7 +33,7 @@ def bfs(room):
         traversal_path.append(move)
         reverse_path.pop(-1)
         if '?' in graph[player.room['room_id']].values():
-            #print(f'Graph at end of BFS. {graph}')
+            print(f'Graph at end of BFS. {graph}')
             return
 
 def dfs(room, cardinal_directions):
@@ -67,7 +67,7 @@ def take_treasure(self):
 
 def sell_treasure(self):
     if player.room['title'] == "Shop":
-        player.sell()
+        player.sell('amazing treasure')
         time.sleep(player.cd)
 
 def name_change(self):
@@ -75,7 +75,7 @@ def name_change(self):
         player.status()
         time.sleep(player.cd)
         if player.p_status['gold'] > 999:
-            player.change_name("Phade")
+            player.change_name("ZestyG")
             time.sleep(player.cd)
         else:
             print('No Coins. Move Along, Peasant. ')
