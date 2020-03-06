@@ -81,7 +81,7 @@ def name_change(self):
         player.status()
         time.sleep(player.cd)
         if player.p_status['gold'] > 999:
-            player.change_name("ZestyG")
+            player.change_name("Haden-Moore")
             time.sleep(player.cd)
         else:
             print('No Coins. Move Along, Peasant. ')
