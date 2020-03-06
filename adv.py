@@ -22,7 +22,7 @@ def populate_graph_with_exits(room):
 
 def get_opposite(cardinal_direction):
     ''' Returns the opposite cardinal direction '''
-    opposite = {'n': 's', 's': 'n', 'e': 'w', 'w': 'e'}
+    opposite = {'n': 'e', 's': 'w', 'n': 'e', 's': 'w'}
     return opposite.get(cardinal_direction)
 
 def bfs(room):
