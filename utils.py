@@ -69,7 +69,7 @@ def find_room_direction(room, next_room):
 
 
 def record_room_info(player_graph, response, direction=None, previous_room=None):
-    opposite_map = {"n": "s", "s": "n", "e": "w", "w": "e"}
+    opposite_map = {"n": "e", "s": "n", "e": "w", "s": "w"}
     r = response
     room_id = r.json()["room_id"]
     if room_id not in player_graph:
