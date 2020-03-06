@@ -55,15 +55,15 @@ def dfs(room, cardinal_directions):
         graph[previous_room_id][cardinal_direction] = in_room_id
 
 
-def take_treasure(self):
-    if len(player.room['items']) > 0:
-        player.status()
-        time.sleep(player.cd)
-        if len(player.p_status['inventory']) < player.p_status['strength']:
-            player.take()
-            time.sleep(player.cd)
-        else:
-            print('Inventory is full')
+# def take_treasure(self):
+#     if len(player.room['items']) > 0:
+#         player.status()
+#         time.sleep(player.cd)
+#         if len(player.p_status['inventory']) < player.p_status['strength']:
+#             player.take()
+#             time.sleep(player.cd)
+#         else:
+#             print('Inventory is full')
 
 def sell_treasure(self):
     if player.room['title'] == "Shop":
